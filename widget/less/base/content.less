@@ -1,0 +1,271 @@
+.view-container {
+	.full-abs;
+	.flex-wrap-v;
+	overflow: hidden;
+	background: @defaultBg;
+}
+
+main,
+.page-wrap {
+	.flex-wrap-v;
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+}
+
+// main的子标签：header, section, footer
+main > section,
+.page-wrap > section {
+	position: relative;
+	.flex-1;
+}
+
+.scroll-content {
+	position: absolute;
+	width: 100%;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	overflow: hidden;
+
+	.scroll {
+		position: absolute;
+		z-index: 0;
+		width: 100%;
+	}
+}
+
+.scroll-content-x {
+	display: block;
+	width: 100%;
+	overflow: hidden;
+
+	.scroll-x {
+		display: table-row;
+
+		.item {
+			display: table-cell;
+			vertical-align: top;
+		}
+	}
+}
+
+// 文字 保留空白符序列,但是正常地进行换行
+.pre-wrap {
+	white-space: pre-wrap;
+}
+
+// 段落缩进
+.text-indent {
+	text-indent: 26px;
+}
+/* 一级标题 */
+.txt-h1 {
+	font-size: @l1;
+	color: @titleColor;
+	line-height: 28px;
+}
+
+/* 二级标题 */
+.txt-h2 {
+	font-size: @l2;
+	color: @titleColor;
+	line-height: 26px;
+}
+
+/* 三级标题 */
+.txt-h3 {
+	font-size: @l3;
+	color: @titleColor;
+	line-height: 24px;
+}
+
+/* 正文描述 */
+.txt-desc {
+	font-size: @l4;
+	color: @descColor;
+	line-height: 24px;
+}
+
+/* 正文备注 */
+.txt-info {
+	font-size: @l5;
+	color: @infoColor;
+	line-height: 22px;
+}
+
+.txt-h1,
+.txt-h2,
+.txt-h3,
+.txt-desc,
+.txt-info {
+	&.is-center {
+		text-align: center;
+	}
+	&.is-right {
+		text-align: right;
+	}
+	&.is-light {
+		color: @lightTxtColor;
+	}
+}
+
+.item-title1,
+.item-title2,
+.item-title3,
+.item-info1,
+.item-info2,
+.item-info3,
+.txt-line1,
+.txt-line2,
+.txt-line3 {
+	display: -webkit-box;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 1;
+}
+
+.item-title1,
+.item-title2,
+.item-title3 {
+	font-size: @l3;
+	color: @titleColor;
+}
+
+.item-info1,
+.item-info2,
+.item-info3 {
+	font-size: @l4;
+	color: @infoColor;
+}
+
+.item-title2,
+.item-info2,
+.txt-line2 {
+	-webkit-line-clamp: 2;
+}
+
+.item-title3,
+.item-info3,
+.txt-line3 {
+	-webkit-line-clamp: 3;
+}
+
+.item-status {
+	display: inline-block;
+	line-height: 20px;
+	width: 50px;
+	overflow: hidden;
+	border-radius: 10px;
+	text-align: center;
+	color: #fff;
+	font-size: @l4;
+
+	&.primary {
+		background: @btnBgPrimary;
+	}
+	&.success {
+		background: @btnBgSuccess;
+	}
+	&.info {
+		background: @btnBgInfo;
+	}
+	&.warning {
+		background: @btnBgWarning;
+	}
+	&.danger {
+		background: @btnBgDanger;
+	}
+}
+
+.item-status-outline {
+	line-height: 20px;
+	font-weight: bold;
+	padding: 0;
+	font-size: @l4;
+
+	&.primary {
+		color: @btnBgPrimary;
+	}
+	&.success {
+		color: @btnBgSuccess;
+	}
+	&.info {
+		color: @btnBgInfo;
+	}
+	&.warning {
+		color: @btnBgWarning;
+	}
+	&.danger {
+		color: @btnBgDanger;
+	}
+}
+
+// 提示性文字样式
+.alert-box {
+	.item-title1;
+	padding: 10px 10px;
+	background: @btnBg;
+	color: @btnTxtColor;
+	.button {
+		background: none;
+		border-radius: 15px;
+		height: 30px;
+		line-height: 30px;
+		padding: 0 8px;
+		margin-left: 8px;
+		white-space: nowrap;
+	}
+}
+
+// 独立完整的内容，文章类详细页面
+article,
+.detail-content {
+	.txt-desc;
+	.padding-vh;
+	background: @paneBg;
+	p {
+		padding: 5px 0;
+	}
+	.item-pic {
+		.box-shadow;
+		margin: 10px 0;
+	}
+	.item-time {
+		font-size: @l3;
+		color: @infoColor;
+	}
+
+	.item-content {
+		.flex-wrap;
+		.align-center;
+		font-size: @l3;
+		line-height: 24px;
+
+		label {
+			width: 90px;
+			color: @titleColor;
+		}
+	}
+}
+// 标签规定独立的流内容（图像、图表、照片、代码等等）
+figure,
+.item-pic {
+	overflow: hidden;
+	img,
+	code {
+		display: block;
+		width: 100%;
+	}
+	figcaption {
+		.item-info3;
+	}
+}
+
+// iframe 嵌入外部页面
+.iframe-pages {
+	.full-size;
+	background: @defaultBg;
+}

@@ -1,0 +1,28 @@
+<main>
+    <header>
+        <div class="toolbar">
+            <a class="bar-button back-button"><i class="dwz-icon-arrow-left"></i></a>
+            <div class="header-title">土建图管理</div>
+        </div>
+    </header>
+
+    <section>
+
+        <div class="scroll-content dwz-scroll">
+            <div class="scroll">
+                <ul class="list">
+
+                    <li class="item dwz-ctl-hover" onclick="$.navView.open({url:'tpl/widget/layout/Edit.html?dwz_callback=biz.pageRender&dwz_helper=script', rel:'layoutEdit'})" dwz-event-touchwipe-touch='touch'>
+                    <!-- <li class="item dwz-ctl-hover" data-href="tpl/widget/layout/Edit.html?dwz_callback=biz.pageRender&dwz_helper=script"  rel="widget" dwz-event-touchwipe-touch="touch"> -->
+                        <p class="flex-1">土建图录入</p><i class="dwz-icon-arrow-right"></i>
+                    </li>
+                    <li class="item dwz-ctl-hover" onclick="$.navView.open({url:'tpl/widget/layout/List.html?dwz_callback=biz.layout.listRender', rel:'layoutList'})">
+                        <p class="flex-1">土建图查询</p><i class="dwz-icon-arrow-right"></i>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+
+    </section>
+</main>

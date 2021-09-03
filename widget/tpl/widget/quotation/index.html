@@ -1,0 +1,27 @@
+<main>
+    <header>
+        <div class="toolbar">
+            <a class="bar-button back-button"><i class="dwz-icon-arrow-left"></i></a>
+            <div class="header-title">报价管理</div>
+        </div>
+    </header>
+
+    <section>
+
+        <div class="scroll-content dwz-scroll">
+            <div class="scroll">
+                <ul class="list">
+
+                    <li class="item dwz-ctl-hover" onclick="$.navView.open({url:'tpl/widget/quotation/new.html?dwz_callback=biz.quotationList.Edit_API', rel:'quotationEdit'})">
+                        <p class="flex-1">报价录入</p><i class="dwz-icon-arrow-right"></i>
+                    </li>
+                    <li class="item dwz-ctl-hover" onclick="$.navView.open({url:'tpl/widget/quotation/List.html?dwz_callback=biz.quotationList.listRender', rel:'quotationList'})">
+                        <p class="flex-1">报价查询</p><i class="dwz-icon-arrow-right"></i>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+
+    </section>
+</main>

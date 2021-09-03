@@ -1,0 +1,22 @@
+{
+    "IsSuccess": true,
+    "Message": "获取成功",
+     "total":10,
+     "Entity":{
+        "OperationButtonLeft": [],
+        "OperationButtonRight": [
+            {"Id": "saveButton", 
+             "ViewText": "保存", 
+             "ClickParams": ["保存"]
+             },
+             {"Id": "submitButton", 
+                "ViewText": "提交", 
+                "ClickParams": ["提交"]
+                },
+                {"Id": "CloseButton", 
+                    "ViewText": "关闭", 
+                    "ClickParams": []
+                    }
+            ]
+        }
+    }

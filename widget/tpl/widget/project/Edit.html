@@ -1,0 +1,355 @@
+<form class="page-wrap dwz-list-form" id="na" method="post" name="{{vo.ProjectId}}" data-tag="{{vo.Version}}" action="./doc/json/ajaxDone.json">
+    <header>
+        <div class="toolbar">
+            <a class="bar-button back-button"><i class="dwz-icon-arrow-left"></i></a>
+            <div class="header-title">报备信息</div>
+        </div>
+    </header>
+    <section>
+        <div class="scroll-content dwz-scroll "  >
+            <div class="scroll">
+                <div class="w-tabbar dwz-tabs">
+                    <div class="tab-bar">
+                        <a class="tab-item"><span>项目信息</span></a>
+                        <a class="tab-item"><span>梯型信息</span></a>
+                        <a class="tab-item"><span>项目备注</span></a>
+                    </div>
+                    <div class="tab-panel">
+                        <div class="panel-item">
+                            <!-- <article>项目信息</article> -->
+                            <div class="form-content unitBox">
+                                <div class="form-item">
+                                    <div class="item-content">
+                                        <label class="">项目编号：</label>
+                                        <input type="text" name="ProjectId" id="ProjectId" disabled value="{{vo.ProjectId}}" class="dwz-clipboard" data-error="">
+                                    </div>
+                                </div>
+                                <div class="form-item">
+                                    <div class="item-content"><label>所属公司:</label>
+                                        <select name="SSCOMPANY" class="toggleSelectRef required" explain="所属公司"
+                                            data-error="所属公司不能为空"
+                                            id="SSCOMPANY"
+                                            data-ref-box="#toggleSelectRef_test1|#toggleSelectRef_test2|"
+                                            data-ctr-show="true" data-ref-val="帝奥|天奥"
+                                            >
+                                            <!-- 设置类型 -->
+                                            
+                                            <option value="{{vo.SSCOMPANY}}" class="diAo">{{vo.SSCOMPANY}}</option>
+                                            <option value="天奥" class="tianAo">天奥</option>
+                                            <option value="帝奥" class="diAo">帝奥</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-item">
+                                    <div class="item-content">
+                                        <label class="">所在区域：</label>
+                                        <input type="text" name="BelongArea" id="BelongArea" value="{{vo.BelongArea}}" value="东区" disabled class="dwz-clipboard" data-error="">
+                                    </div>
+                                </div> 
+                                   
+                                <div class="form-item">
+                                    <div class="item-content">
+                                        <label class="">销售地分公司：</label>
+                                        <input type="text" name="BelongBranchCompany" id="BelongBranchCompany" disabled="disabled" value="{{vo.BelongBranchCompany}}" class="dwz-clipboard" data-error="">
+                                    </div>
+                                </div>
+                                <div class="form-item">
+                                    <div class="item-content">
+                                        <label class="">项目地分公司：</label>
+                                        <input type="text" name="ProjectBranchCompany" id="ProjectBranchCompany" disabled value="{{vo.ProjectBranchCompany}}" class="dwz-clipboard" data-error="">
+                                    </div>
+                                </div>
+                                <div class="form-item">
+                                    <div class="item-content">
+                                        <label class="">销售地销售员：</label>
+                                        <input type="text" name="Creator" id="Creator" value="{{vo.Creator}}" disabled class="dwz-clipboard" data-error="">
+                                    </div>
+                                </div>
+                                <!-- <div class="form-item">
+                                    <div class="item-content">
+                                        <label class="">项目地销售员：</label>
+                                        <input type="text" name="SalerInCharge" id="SalerInCharge" disabled value="{{vo.SalerInCharge}}" class="dwz-clipboard" data-error="">
+                                    </div>
+                                </div> -->
+                                <div class="form-item">
+                                    <div class="item-content">
+                                        <label class="required">项目名称：</label>
+                                        <input type="text" name="ProjectName" id="ProjectName" value="{{vo.ProjectName}}" class="required dwz-clipboard" data-error="请输入项目名称">
+                                    </div>
+                                </div>
+                                <div class="form-item">
+                                    <div class="item-content">
+                                        <label class="required">项目类型：</label>
+                                        <select name="ProjectTypeInfo" id="ProjectTypeInfo" class="required" data-error="" value="{{vo.ProjectTypeInfo}}">
+                                        <option value="办公楼">办公楼</option>
+                                        <option value="住宅">住宅</option>
+                                        <option value="政策性住房">政策性住房</option>
+                                        <option value="酒店">酒店</option>
+                                        <option value="家用电梯">家用电梯</option>
+                                        <option value="医院">医院</option>
+                                        <option value="商业建筑">商业建筑</option>
+                                        <option value="交通枢纽">交通枢纽</option>
+                                        <option value="工厂电梯">工厂电梯</option>
+                                        <option value="其他">其他</option>
+                                    </select>
+                                    </div>
+                                </div>
+                                <!-- <div class="form-item">
+                                    <div class="item-content">
+                                        <label class="required">合同甲方名称：</label>
+                                        <input type="text" name="View_ParamValue_CustomName" id="" value="{{vo.View_ParamValue_CustomName}}" class="required dwz-clipboard" data-error="请输入项目名称">
+                                    </div>
+                                </div> -->
+
+                                  <!-- 下拉框参数 -->
+                                 <div class="form-item">
+									<div class="item-content">
+										<label class="required">合同甲方名称：</label>
+                                        <select name="View_ParamValue_CustomName" id="CustomCate" class="required" data-error="" value="{{vo.View_ParamValue_CustomName}}">
+                                            {{each vo.LC.lCustomers as item}}
+                                            <option value="{{item.QC}}">{{item.QC}}</option>
+                                            {{/each}}
+                                        </select>
+                                                										
+	
+									</div>
+								</div>
+                                <!--  -->
+                                <div class="form-item">
+                                    <div class="item-content">
+                                        <label class="required">最终用户：</label>
+                                        <input type="text" name="ProjectName" id="ProjectName" value="{{vo.View_ParamValue_CustomName}}" class="required dwz-clipboard" data-error="请输入最终用户">
+                                    </div>
+                                </div>
+
+                                <div class="form-item">
+                                    <div class="item-content">
+                                        <label class="required">客户类型：</label>
+                                        <select name="CustomCate" id="CustomCate" class="required" data-error="" value="{{vo.CustomCate}}">
+                                        <option value="政府">政府</option>
+                                        <option value="战略">战略</option>
+                                        <option value="社会">社会</option>
+                                        <option value="私人">私人</option>
+                                        <option value="无"></option>
+                                    </select>
+                                    </div>
+                                </div>
+                                <div class="form-item">
+                                    <div class="item-content">
+                                        <label class="required">项目总台量：</label>
+                                        <input type="etxt" name="EleCount" id="EleCount" disabled value="100" class="required dwz-clipboard" data-error="请选择一种梯型">
+                                    </div>
+                                </div>
+                                <div class="form-item">
+                                    <div class="item-content">
+                                        <label class="">项目阶段(土建)：</label>
+                                        <select name="ProjectStage" id="ProjectStage" class="" data-error="" value="{{vo.ProjectStage}}">
+                                        <option value="规划">规划</option>
+                                        <option value="报批">报批</option>
+                                        <option value="设计">设计</option>
+                                        <option value="开工">开工</option>
+                                        <option value="在建">在建</option>
+                                        <option value="封顶">封顶</option>
+                                        <option value="完工">完工</option>
+                                        <option value="交房">交房</option>
+                                        <option value="其他">其他</option>
+                                    </select>
+                                    </div>
+                                </div>
+                                <div class="form-item">
+                                    <div class="item-content">
+                                        <label class="">预计签约时间：</label>
+                                        <input type="text" name="ForecastSignTime" id="ForecastSignTime" value="{{vo.ForecastSignTime}}" placeholder="" class="dwz-calendar" data-error="">
+                                    </div>
+                                </div>
+                                <div class="form-item">
+                                    <div class="item-content">
+                                        <label class="required">代理商名称：</label>
+                                        <select name="OEM" id="OEM" class="required" data-error="" value="{{vo.OEM}}">
+                                        <option value="无代理商">无代理商</option>
+                                        <option value="VAG20113728">00010</option>
+                                        <option value="VAG20113611">APP测试0000</option>
+                                        <option value="VAG20113594">cccd</option>
+                                        <option value="VAG20113739">csssss</option>
+                                    </select>
+                                    </div>
+                                </div>
+                                <div class="form-item">
+                                    <div class="item-content">
+                                        <label class="">协议代理商签约台量：</label>
+                                        <input type="text" name="SignCount" id="SignCount" value="{{vo.SignCount}}" disabled class="dwz-clipboard" data-error="">
+                                    </div>
+                                </div>
+                                <div class="form-item">
+                                    <div class="item-content">
+                                        <label class="">竞争对手：</label>
+                                        <input type="text" name="Competitor1" id="Competitor1" value="{{vo.Competitor1}}" class="dwz-clipboard" data-error="">
+                                    </div>
+                                </div>
+                                <div class="form-item">
+                                    <div class="item-content">
+                                        <label class="">项目所在国家：</label>
+                                        <input type="text" name="ProjectCountry" id="ProjectCountry" disabled value="{{vo.ProjectCountry}}" class="dwz-clipboard" data-error="">
+                                    </div>
+                                </div>
+                                <div class="form-item">
+                                    <div class="item-content">
+                                        <label>省市区</label>
+                                        <input type="hidden" name="province">
+                                        <input type="hidden" name="city">
+                                        <input type="hidden" name="county">
+                                        <input type="hidden" isnotempty="True" paramname="项目所在地" name="ProvCityDist" id="ProvCityDist" value="">
+                                        <input type="text" value="{{vo.destination}}" name="destination" class="required" placeholder="省、市、区" data-error="请选择省市区" 
+                                         onclick="$.dialog.open({
+                                            url: 'tpl/helper/dialogSelectRegion.html?dwz_callback=biz.helpercopy.selectRegionRender',
+                                            data: {target:this, code: '',
+                                                callback: function(data) {
+                                                    console.log(this, data)
+                                                    var form = this.parentsByTag('form').get(0);
+                                                    form.province.value = data.province;
+                                                    form.city.value = data.city;
+                                                    form.county.value = data.county;
+                                                    form.destination.value = data.names;
+                                                    form.ProvCityDist.value = data.paramVal;
+                                                    $.dialog.close();
+                                                }
+                                            },
+                                            pop: 'actionSheet'
+                                        })">
+                                       
+                                    </div>
+                                </div>
+                                <div class="form-item">
+                                    <div class="item-content">
+                                        <label class="required">销售地台量占比(%)：</label>
+                                        <input type="text" name="Ratio" id="Ratio" value="10%" disabled class="required dwz-clipboard" data-error="请输入销售地台量占比">
+                                    </div>
+                                </div>
+                                <div class="form-item">
+                                    <div class="item-content">
+                                        <label class="required">项目地址：</label>
+                                        <input type="text" name="Address" id="Address" value="{{vo.Address}}" class="required dwz-clipboard" data-error="请输入项目地址">
+                                    </div>
+                                </div>
+                                <div class="form-item">
+                                    <div class="item-content">
+                                        <label class="required">是否招标：</label>
+                                        <select name="" class="required" data-error="" value="{{vo.required}}">
+                                        <option value="1">是</option>
+                                        <option value="2">否</option>
+                                        
+                                    </select>
+                                    </div>
+                                </div>
+                                <!-- 隐藏参数开始 1.版本号 2 客户信息 -->
+                           <div class="form-item" style="display: none;" >
+                                    <div class="item-content">
+                                        <label>版本号</label>
+                                        <input type="text" name="Version" id="Address" value="{{vo.Version}}" class=" dwz-clipboard" data-error="请输入项目地址">
+                                    </div>
+                          </div>
+                            </div>
+                        </div>
+                        <div class="panel-item">
+                            <div class="dwz-panel dwz-collapse margin-h box-round no-line" id="toggleSelectRef_test1">
+                                <div class="panel-header">
+                                    <label class="panel-title blockquote">帝奥</label>
+                                    <a class="item-right"><i class="dwz-icon-arrow-up"></i></a>
+                                </div>
+                                <div class="panel-content">
+                                        <div class="grid-col-2" id="ladderTypeSet">
+                                            <div class="item dwz-ctl-flwex">
+                                                <span>梯型</span>
+                                                <span>数量</span>
+                                            </div>
+                                            <div class="item dwz-ctl-flwex">
+                                                <span>梯型</span>
+                                                <span>数量</span>
+                                            </div>
+                                            {{each vo.diAo1List as item}}
+                                                <div class="item dwz-ctl-ladder">
+                                                    <span>{{item.ElevatorId}}</span>
+                                                    <input id="ProjectElevatorCount_{{item.ElevatorId}}" name="{{item.ElevatorId}}" value="{{item.Count}}" onkeyup="biz.projectList.changeElevatorCount({
+                                                        name: '#ladderTypeSet',
+                                                        name1: '#EleCount'
+                                                    },function(ret) {
+                                                        $.alert.toast('title: ' + ret.num)
+                                                    })">
+                                                </div>
+                                            {{/each}}
+                                        </div>
+                                </div>
+                            </div>
+                            <div class="dwz-panel dwz-collapse margin-h box-round no-line" id="toggleSelectRef_test2">
+                                <div class="panel-header">
+                                    <label class="panel-title blockquote">天奥</label>
+                                    <a class="item-right"><i class="dwz-icon-arrow-up"></i></a>
+                                </div>
+                                <div class="panel-content">
+                                        <div class="grid-col-2" id="ladderTypeSet">
+                                            <div class="item dwz-ctl-flwex">
+                                                <span>梯型</span>
+                                                <span>数量</span>
+                                            </div>
+                                            <div class="item dwz-ctl-flwex">
+                                                <span>梯型</span>
+                                                <span>数量</span>
+                                            </div>
+                                            {{each vo.tianList as item}}
+                                                <div class="item dwz-ctl-ladder">
+                                                    <span>{{item.ElevatorId}}</span>
+                                                    <input id="ProjectElevatorCount_{{item.ElevatorId}}" name="{{item.ElevatorId}}" value="{{item.Count}}" onkeyup="biz.projectList.changeElevatorCount({
+                                                        name: '#ladderTypeSet',
+                                                        name1: '#EleCount'
+                                                    },function(ret) {
+                                                        $.alert.toast('title: ' + ret.num)
+                                                    })">
+                                                </div>
+                                            {{/each}}
+                                        </div>
+                                </div>
+                            </div>
+                            <!-- <article>梯型信息</article>  -->
+                            <div class="empty_box">
+                                <div class="empty-img">
+                                    <img src="image/browse-empty-bg.svg">
+                                </div>
+                                <p class="txt-info is-center">暂时还没有数据哦~</p>
+                            </div> 
+                           
+                        </div>
+                        <div class="panel-item">
+                            <!-- <article>项目备注</article> -->
+                            <div class="form-content unitBox">
+                                <div class="form-item">
+                                    <label class="required">备注</label>
+                                    <div class="item-content">
+                                        <textarea class="textarea" name="Remark" rows="4" placeholder="请输入备注" maxlength="200" data-error="请输入备注"  value="">{{vo.Remark}}</textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <div class="form-bar pane">
+        
+        <button class="button primary" type="button"onclick="return biz.projectList.OperationButtonOut('{{vo.ProjectId}}','{{vo.InstanceNodeGuid}}','{{vo.Version}}')">操作</button>
+       
+    </div>
+</form>
+<script  id="tpl_list" type="text/html">
+
+</script>
+
+<style>
+    
+.grid-col-2 .dwz-ctl-ladder span {
+    width: 50%;
+    text-align: left;
+    }
+</style>

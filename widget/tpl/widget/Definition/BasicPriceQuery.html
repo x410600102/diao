@@ -1,0 +1,203 @@
+<main>
+
+	<header class="header-Title">
+		<div class="toolbar">
+			<button class="bar-button back-button"><i class="dwz-icon-arrow-left"></i></button>
+			<div class="header-title">基价查询</div>
+		</div>
+	</header>
+
+	<section>
+
+        <div class="w-tabbar dwz-tabs" id="BasicPriceQuery">
+            <div class="tab-bar">
+                <a class="tab-item active">直梯基价</a>
+                <a class="tab-item">扶梯基价</a>
+            </div>
+            <div class="tab-panel">
+                <div class="panel-item active">
+                    <form method="post" action="./doc/json/ajaxDone.json" id="Z" onsubmit="return biz.my.verticalLadder(this)">
+                        <div class="scroll-content dwz-scroll">
+                            <div class="scroll">
+            
+                                <div class="form-content unitBox" id="">
+            
+                                    <div class="form-item">
+                                        <div class="item-content basicprice">
+                                            <label>￥</label>
+                                            <input type="text" readonly value="0" class="VerticalLadderCount">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-item">
+                                        <div class="item-content">
+                                            <label>梯型</label>
+                                            <select class="EPT dwz-icon-arrow-right" name="EPT" id="EPT"  onchange="biz.my.GetQuotationSimpleByEpt($('#BasicPriceQuery'),this)">
+                                                <option selected="" value="VE(V100/V200)"> VE(V100/V200)</option>
+                                                <option value="VE(V300)"> VE(V300)</option>
+                                                <option value="VE(V600)"> VE(V600)</option>
+                                                <option value="VEW(V100/V200)"> VEW(V100/V200)</option>
+                                                <option value="VEW(V300)"> VEW(V300)</option>
+                                                <option value="VEW(V600)"> VEW(V600)</option>
+                                                <option value="VB(V100/V200)"> VB(V100/V200)</option>
+                                                <option value="VB(V600)"> VB(V600)</option>
+                                                <option value="VBW(V100/V200)"> VBW(V100/V200)</option>
+                                                <option value="VBW(V600)"> VBW(V600)</option>
+                                                <option value="VG(V100)"> VG(V100)</option>
+                                                <option value="VG(V200)"> VG(V200)</option>
+                                                <option value="VG(V300)"> VG(V300)</option>
+                                                <option value="VGW(V100)"> VGW(V100)</option>
+                                                <option value="VGW(V200)"> VGW(V200)</option>
+                                                <option value="VGW(V300)"> VGW(V300)</option>
+                                                <option value="VH"> VH</option>
+                                                <option value="VEB"> VEB</option>
+                                                <option value="VHW"> VHW</option>
+                                                <option value="VHC"> VHC</option>
+                                                <option value="VW"> VW</option>
+                                            </select>
+                                            <i class="dwz-icon-arrow-right"></i>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-item">
+                                        <div class="item-content">
+                                            <label>载重</label>
+                                            <select name="DL">
+                                                {{each vo.DL as item}}
+                                                    <option value="{{item.ParamValue}}">{{item.ParamText}}</option>
+                                                {{/each}}
+                                            </select>
+                                            <i class="dwz-icon-arrow-right"></i>
+                                        </div>
+                                    </div>
+                                    <div class="form-item">
+                                        <div class="item-content">
+                                            <label>速度</label>
+                                            <select name="V">
+                                                {{each vo.V as item}}
+                                                    <option value="{{item.ParamValue}}">{{item.ParamText}}</option>
+                                                {{/each}}
+                                            </select>
+                                            <i class="dwz-icon-arrow-right"></i>
+                                        </div>
+                                    </div>
+                                    <div class="form-item">
+                                        <div class="item-content">
+                                            <label>层站</label>
+                                            <input class="required " type="number" name="NF" data-error="请输入层站">
+                                        </div>
+                                    </div>
+                                </div>
+            
+                                <div class="form-bar">
+                                    <button class="button primary" type="submit">计算价格</button>
+                                </div>
+            
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="panel-item">
+                    <form method="post" action="./doc/json/ajaxDone.json" id="F" onsubmit="return biz.my.escalatorLadder(this)">
+                        <div class="scroll-content dwz-scroll">
+                            <div class="scroll">
+            
+                                <div class="form-content unitBox">
+            
+                                    <div class="form-item">
+                                        <div class="item-content EscalatorCountA">
+                                            <label>￥</label>
+                                            <input type="text" readonly value="0" class="EscalatorCount">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-item">
+                                        <div class="item-content">
+                                            <label>梯型</label>
+                                            <select class="EPT" name="EPT" onchange="biz.my.GetQuotationSimpleByEpt($('main'),this)">
+                                                <option value="VF">VF</option>
+                                                <option value="VR">VR</option>
+                                            </select>
+                                            <i class="dwz-icon-arrow-right"></i>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-item">
+                                        <div class="item-content">
+                                            <label>梯级宽度</label>
+                                            <select name="CAWTH">
+                                                {{each vo.CAWTH as item}}
+                                                    <option value="{{item.ParamValue}}">{{item.ParamText}}</option>
+                                                {{/each}}
+                                            </select>
+                                            <i class="dwz-icon-arrow-right"></i>
+                                        </div>
+                                    </div>
+                                    <div class="form-item">
+                                        <div class="item-content">
+                                            <label>倾斜角度</label>
+                                            <select name="FTA">
+                                                {{each vo.FTA as item}}
+                                                    <option value="{{item.ParamValue}}">{{item.ParamText}}</option>
+                                                {{/each}}
+                                            </select>
+                                            <i class="dwz-icon-arrow-right"></i>
+                                        </div>
+                                    </div>
+                                    <div class="form-item">
+                                        <div class="item-content">
+                                            <label>水平梯级</label>
+                                            <select name="NOHS">
+                                                {{each vo.NOHS as item}}
+                                                    <option value="{{item.ParamValue}}">{{item.ParamText}}</option>
+                                                {{/each}}
+                                            </select>
+                                            <i class="dwz-icon-arrow-right"></i>
+                                        </div>
+                                    </div>
+                                    <div class="form-item">
+                                        <div class="item-content">
+                                            <label>提升高度</label>
+                                            <input class="required" type="text" name="R" data-error="请输入提升高度">
+                                        </div>
+                                    </div>
+                                    <div class="form-item">
+                                        <div class="item-content">
+                                            <label>安装环境</label>
+                                            <select name="INSEN">
+                                                {{each vo.INSEN as item}}
+                                                    <option value="{{item.ParamValue}}">{{item.ParamText}}</option>
+                                                {{/each}}
+                                            </select>
+                                            <i class="dwz-icon-arrow-right"></i>
+                                        </div>
+                                    </div>
+                                    <div class="form-item">
+                                        <div class="item-content">
+                                            <label>分段</label>
+                                            <select name="TFS">
+                                                {{each vo.TFS as item}}
+                                                    <option value="{{item.ParamValue}}">{{item.ParamText}}</option>
+                                                {{/each}}
+                                            </select>
+                                            <i class="dwz-icon-arrow-right"></i>
+                                        </div>
+                                    </div>
+                                </div>
+            
+                                <div class="form-bar">
+                                    <button class="button primary" type="submit">计算价格</button>
+                                </div>
+            
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+		
+        
+
+	</section>
+</main>

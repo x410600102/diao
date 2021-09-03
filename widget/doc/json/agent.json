@@ -1,0 +1,22 @@
+{
+	"IsSuccess": true,
+    "status": 1,
+    "Message": "获取成功",
+    "Entity":{
+    	"total":10,
+    	"list":[
+    	{"dlsbh":"VKS20210427022",
+			"dlsmc":"测试代理商名字",
+			"sqqy":"安徽分公司",
+			"sqnr":"安装",
+			"sqdj":"ddasdsad",
+			"lxr":"小红",
+			"lxdh":"1377654741",
+			"dzyx":"dsadsadsa",
+			"sfzh":"1216516556",
+			"sfqs":"是",
+			"ssqy":"东区"
+    	}
+        ]
+    }
+}

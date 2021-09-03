@@ -1,0 +1,238 @@
+// input 日期选择框
+#dwz-calendar {
+	.box-shadow;
+	.full-fixed;
+	.flex-wrap-center;
+	background: @maskBg;
+	z-index: 1100;
+	.calendar {
+		width: 300px;
+
+		// input 日期选择框 底部工具栏
+		.df {
+			display: flex;
+			.button {
+				margin: 10px;
+			}
+		}
+	}
+}
+
+input.dwz-calendar {
+	background: url(../../image/icon/calendar/icon-calendar.svg) no-repeat right center;
+	background-size: 16px;
+}
+
+.calendar {
+	.box-line;
+	overflow: hidden;
+	min-width: 240px;
+	position: relative;
+	background: @paneBg;
+	// a {
+	// 	color: @titleColor;
+	// }
+
+	.dt {
+		.b-line;
+		display: flex;
+		align-items: center;
+		height: 40px;
+
+		position: relative;
+		.ym {
+			padding: 0px 24px;
+			text-align: center;
+			font-size: @l3;
+			flex: 1;
+		}
+		.ym span {
+			padding: 0 12px;
+			cursor: pointer;
+		}
+		.ym a {
+			display: inline-block;
+			text-decoration: none;
+			line-height: 30px;
+			font-weight: bold;
+		}
+
+		.pr a,
+		.ne a {
+			.flex-wrap-center;
+			width: 40px;
+			height: 40px;
+		}
+		.miscBtn {
+			margin: 0 10px;
+		}
+	}
+	.ympop {
+		display: none;
+		width: 100%;
+		font-size: @l3;
+		background-color: @paneBg;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		&.open {
+			display: flex;
+			flex-direction: column;
+		}
+		.ym {
+			display: flex;
+			flex: 1;
+			.mm {
+				flex: 1;
+			}
+			.yy {
+				.r-line;
+				flex: 1;
+			}
+		}
+
+		.yt {
+			height: 38px;
+			display: flex;
+			justify-content: space-between;
+		}
+		.pr,
+		.ne {
+			.flex-wrap-center;
+			width: 40px;
+			height: 100%;
+		}
+
+		ul {
+			padding-top: 3px;
+		}
+		li {
+			float: left;
+			width: 50%;
+			height: 38px;
+			padding: 1px 2px;
+			list-style: none;
+		}
+		li a {
+			display: block;
+			overflow: hidden;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+			text-align: center;
+			text-decoration: none;
+			line-height: 32px;
+		}
+
+		.selected a {
+			border-radius: 3px;
+		}
+
+		.ympop-ft {
+			.t-line;
+			height: 50px;
+			display: flex;
+			justify-content: space-around;
+			align-items: center;
+
+			.button {
+				min-width: 80px;
+				height: 32px;
+				font-weight: bold;
+			}
+		}
+	}
+	.bd {
+		font-size: @l4;
+		font-weight: bold;
+		overflow: hidden;
+		width: 100%;
+
+		.slide-wrap {
+			display: flex;
+			width: 300%;
+			padding: 10px 0;
+		}
+	}
+	// input 日期选择框 底部工具栏
+	.df {
+		display: none;
+	}
+	tr {
+		height: 32px;
+		line-height: 32px;
+	}
+	.di {
+		table-layout: fixed;
+		border-collapse: collapse;
+		border-spacing: 0;
+		width: 33.3333%;
+		position: relative;
+	}
+	th {
+		width: 14.28%;
+		cursor: default;
+		color: @infoColor;
+		span {
+			display: block;
+			text-align: center;
+			font-weight: bold;
+			font-size: @l3;
+		}
+	}
+
+	td {
+		padding: 1px;
+		cursor: pointer;
+		position: relative;
+		a {
+			display: block;
+			text-align: center;
+			line-height: 30px;
+			width: 30px;
+			border-radius: 50%;
+		}
+
+		&.dot {
+			&:before {
+				content: ' ';
+				display: block;
+				width: 4px;
+				height: 4px;
+				border-radius: 50%;
+				background-color: @linkColorActive;
+				position: absolute;
+				bottom: 2px;
+				left: 50%;
+				margin-left: -2px;
+			}
+		}
+	}
+
+	.selected {
+		a,
+		a:hover {
+			font-weight: bold;
+			background-color: @btnBgPrimary;
+			color: @btnTxtColorPrimary;
+		}
+	}
+	.inactive a {
+		color: @linkColorInactive;
+	}
+
+	.disabled a,
+	.disabled a:hover {
+		color: @linkColorDisabled;
+		border: none;
+		background: none;
+		cursor: default;
+	}
+
+	&.view-week {
+		.dt .ym i {
+			display: none;
+		}
+	}
+}

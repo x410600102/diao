@@ -1,0 +1,61 @@
+{
+    "IsSuccess": true,
+    "status": 1,
+    "Message": "获取成功",
+    "Entity": {
+        "lists": [
+            {
+                "tltle": "乘客电梯",
+                "imgSrc": "http://180.100.208.181:8989/Images/product/passenger/passenger.png",
+                "children": {
+                    "imgSrc": "http://180.100.208.181:8989/Images/product/passenger/",
+                    "len":"36"
+                }
+            },
+            {
+                "tltle": "别墅电梯",
+                "imgSrc": "http://180.100.208.181:8989/Images/product/bieshu/bieshu.png ",
+                "children": {
+                    "imgSrc": "http://180.100.208.181:8989/Images/bieshu/bieshu/",
+                    "len":"28"
+                }
+            },
+            {
+                "tltle": "扶梯",
+                "imgSrc": "http://180.100.208.181:8989/Images/product/futi/futi.png ",
+                "children": {
+                    "imgSrc": "http://180.100.208.181:8989/Images/futi/futi/",
+                    "len":"20"
+                }
+            },
+            {
+                "tltle": "无机房电梯",
+                "imgSrc": "http://180.100.208.181:8989/Images/product/jifang/jifang.png ",
+                "children": {
+                    "imgSrc": ""
+                }
+            },
+            {
+                "tltle": "医用电梯",
+                "imgSrc": "http://180.100.208.181:8989/Images/product/yiyong/yiyong.png ",
+                "children": {
+                    "imgSrc": ""
+                }
+            },
+            {
+                "tltle": "载货电梯",
+                "imgSrc": "http://180.100.208.181:8989/Images/product/zaihuo/zaihuo.png ",
+                "children": {
+                    "imgSrc": ""
+                }
+            },
+            {
+                "tltle": "观光电梯",
+                "imgSrc": "http://180.100.208.181:8989/Images/product/guanguang/guanguang.png ",
+                "children": {
+                    "imgSrc": ""
+                }
+            }
+        ]
+    }
+}

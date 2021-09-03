@@ -1,0 +1,119 @@
+<style>
+	table {
+		border-right: 1px solid #dddddd;
+		border-bottom: 1px solid #dddddd;
+		border-collapse: separate;
+		width: 100%;
+		font-size: 12px;
+	}
+	
+	table tr.title>th {
+		text-align: center;
+	}
+	
+	table tbody tr:nth-child(odd) {
+		background-color: #F7F7F7;
+	}
+	
+	table th {
+		height: 31px;
+		text-indent: 10px;
+	}
+	
+	table th,
+	table td {
+		padding: 5px;
+		text-align: left;
+		min-width: 110px;
+	}
+</style>
+<form class="page-wrap dwz-list-form" method="post" action="./doc/json/ajaxDone.json">
+	<input type="hidden" name="quotationId" value="{{vo.quotationId}}" />
+	<input type="hidden" name="version" value="{{vo.version}}" />
+	<input type="hidden" name="curSubVersion" value="{{vo.curSubVersion}}" />
+	<input type="hidden" name="oldSubVersion" value="{{vo.oldSubVersion}}" />
+	<header>
+		<div class="toolbar">
+			<a class="bar-button back-button"><i class="dwz-icon-arrow-left"></i></a>
+			<div class="header-title">{{vo.quotationId}}_价格对比</div>
+
+		</div>
+	</header>
+
+	<section>
+		<div class="scroll-content dwz-scroll">
+			<div class="scroll">
+
+				<div class="w-tabbar dwz-tabs">
+					<div class="tab-bar">
+						<a class="tab-item proje"><span>项目信息对比</span></a>
+						<a class="tab-item price"><span>规格对比</span></a>
+					</div>
+					<div class="tab-panel">
+						<div class="panel-item">
+							<div class="dwz-panel dwz-collapse">
+								<div class="form-item">
+									<div class="item-content">
+										<label></label>
+										<div class="flex-wrap grid-col-2" style="width: 100%;">
+											<p class="item item-tinfo1" style="background-color:#9bd6d8;color:#ffffff;">版本-{{vo.curSubVersion}}</p>
+											<p class="item item-tinfo2" style="background-color:#e25c5c;color:#ffffff;">版本-{{vo.oldSubVersion}}</p>
+										</div>
+									</div>
+								</div>
+								<div class="panel-header">
+									<label class="panel-title blockquote">项目信息</label>
+									<a class="item-right"><i class="dwz-icon-arrow-up"></i></a>
+								</div>
+								<div class="panel-content">
+									<div class="form-content unitBox" id="PROJECTINFO">
+
+									</div>
+								</div>
+							</div>
+							<div class="dwz-panel dwz-collapse">
+								<div class="panel-header">
+									<label class="panel-title blockquote">设备合同信息</label>
+									<a class="item-right"><i class="dwz-icon-arrow-up is-collapse"></i></a>
+								</div>
+								<div class="panel-content" style="display: none;">
+									<div class="form-content unitBox" id="EQUIPMENTCONTRACTINFO">
+
+									</div>
+								</div>
+							</div>
+							<div class="dwz-panel dwz-collapse">
+								<div class="panel-header">
+									<label class="panel-title blockquote">安装合同信息</label>
+									<a class="item-right"><i class="dwz-icon-arrow-up is-collapse"></i></a>
+								</div>
+								<div class="panel-content" style="display: none;">
+									<div class="form-content unitBox" id="INSTALLCONTRACTINFO">
+
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="panel-item">
+							<div class="dwz-panel dwz-collapse">
+								<div class="panel-header">
+									<label class="panel-title blockquote">规格对比</label>
+									<a class="item-right"><i class="dwz-icon-arrow-up"></i></a>
+								</div>
+								<div class="panel-content">
+									<div class="TableList" id="PriceTable">
+										
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</section>
+</form>
+<script id="tpl_list" type="text/html">
+
+</script>

@@ -1,0 +1,17 @@
+{
+    "IsSuccess": 1,
+    "Message": "",
+    "Entity": [{
+            "title": "轮播图1",
+            "pic_url": "image/pic/ao_41.png"
+        },
+        {
+            "title": "轮播图2",
+            "pic_url": "image/pic/ao_43.png"
+        },
+        {
+            "title": "轮播图3",
+            "pic_url": "image/pic/ao_44.png"
+        }       
+    ]
+}

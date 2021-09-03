@@ -1,0 +1,271 @@
+form {
+	display: block;
+}
+
+input,
+button,
+select,
+textarea {
+	outline: none;
+}
+
+textarea {
+	resize: none;
+	border: none;
+	background: none;
+}
+
+input {
+	background: none;
+	user-select: text;
+	cursor: auto;
+	padding: 0;
+	border: 0;
+	font-size: @l3;
+	-webkit-appearance: textfield;
+	-webkit-rtl-ordering: logical;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+input[type='checkbox'],
+input[type='radio'] {
+	box-sizing: border-box;
+	-webkit-appearance: none; /*去除默认样式*/
+	visibility: hidden;
+	cursor: pointer;
+	border: none;
+	outline: none;
+	background: transparent;
+	position: relative;
+	.flex-wrap-center;
+	width: 32px;
+	height: 100%;
+	&:after {
+		display: block;
+		width: 16px;
+		height: 16px;
+		content: ' ';
+		visibility: visible;
+		.flex-wrap-center;
+		background: url('../../image/form/checkbox/unchecked.svg') no-repeat center center;
+		background-size: 100% 100%;
+	}
+
+	&:checked {
+		&:after {
+			//content: "✓";
+			background-image: url('../../image/form/checkbox/checked.svg');
+		}
+	}
+
+	&.radio {
+		&:after {
+			background: none;
+		}
+
+		&:checked {
+			&:after {
+				background-image: none;
+			}
+		}
+	}
+}
+
+select {
+	background: none;
+	border: none;
+	cursor: auto;
+	font-size: @l3;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+// 红色星号
+.required-star {
+	&:after {
+		content: ' ';
+		display: inline-block;
+		width: 10px;
+		height: 10px;
+		background: url('../../image/form/required-star.svg') no-repeat center;
+		background-size: 60%;
+	}
+}
+label {
+	&.required {
+		.required-star;
+	}
+}
+
+.ignoreRequired {
+	label {
+		&.required {
+			&:after {
+				display: none;
+			}
+		}
+	}
+}
+
+.input-range {
+	input[type='date'],
+	input[type='number'],
+	input[type='text'],
+	select {
+		display: inline-block;
+		width: 120px;
+		font-size: 13px;
+		.box-line;
+	}
+
+	.limit {
+		display: inline-block;
+		color: #aaa;
+		padding: 0 2px;
+	}
+}
+
+.form-item {
+	.input {
+		width: 100%;
+		line-height: 24px;
+		height: 24px;
+	}
+
+	.select {
+		width: 100%;
+		border: 0;
+		line-height: 24px;
+		height: 24px;
+	}
+
+	.textarea {
+		width: 100%;
+        border: 1px solid #2467ff;
+        border-radius: 5px;
+        padding: 8px;
+	}
+	// dwz-icon 图标
+	i {
+		font-size: @l2;
+		color: @infoColor;
+	}
+}
+
+.form-content {
+	position: relative;
+
+	.legend {
+		.flex-1;
+		.padding-h;
+		align-items: center;
+		line-height: 40px;
+		background: @defaultBg;
+		color: @infoColor;
+	}
+	.form-item {
+		background: #fff;
+		position: relative;
+		.flex-wrap-v;
+		.t-line;
+		padding: 10px;
+
+		&.is-mini {
+			min-height: 36px;
+		}
+		&:last-of-type {
+			.tb-line;
+		}
+		input {
+			.flex-1;
+			padding: 2px 5px;
+
+			&.inline-right {
+				width: 40px;
+				text-align: right;
+				.box-line;
+			}
+		}
+
+		label {
+			color: @labelColor;
+			font-size: @l3;
+			line-height: 24px;
+		}
+
+		.item-content {
+			.flex-wrap;
+			.align-center;
+			.flex-1;
+
+			label {
+				width: 40%;
+			}
+
+			a,
+			span {
+				white-space: nowrap;
+				color: @linkColor;
+			}
+            select,
+            input {
+                width: 60%;
+                height:30px;
+                border: 1px solid #226e4b;
+                border-radius: 5px;
+            }
+            input:disabled, select:disabled, textarea:disabled {
+                border-color: #d9d9d9!important;
+                background-image: none!important;
+            }
+		}
+
+		&.disabled {
+			color: @linkColorDisabled;
+		}
+
+		&.dwz-user-icon {
+			.item-content {
+				justify-content: flex-end;
+
+				img {
+					max-width: 66px;
+					max-height: 66px;
+					border-radius: 50%;
+					margin: 5px 15px;
+				}
+			}
+		}
+	}
+
+	// 无分隔线
+	&.no-line {
+		.form-item {
+			border: none;
+			min-height: 40px;
+		}
+	}
+
+	// 圆角边框
+	&.box-round {
+		.margin-h;
+		.box-line;
+		.form-item {
+			&:first-of-type {
+				border: none;
+			}
+			&:last-of-type {
+				.t-line;
+			}
+		}
+	}
+}
+
+input:invalid,
+select:invalid,
+textarea:invalid {
+	background: url('../../image/icon/icon-invalid.svg') 100% center no-repeat;
+}
+
+textarea:read-only {
+	background-color: @inputBg;
+}

@@ -1,0 +1,334 @@
+<style>
+	.QuotCodeList {
+		flex: 1;
+	}
+
+	.QuotCodeList .item:before {
+		border: none;
+	}
+
+	.QuotCodeList .dwz-scroll-x {
+		display: flex;
+		overflow-x: scroll
+	}
+
+	.QuotCodeList .layout-row {
+		text-align: left;
+		width: auto;
+		box-shadow: 1px 0px 5px #e4e4e4;
+		padding: 0px 5px;
+	}
+</style>
+<form class="page-wrap dwz-list-form" id="na" method="post" name="{{vo.dlsbh}}" action="./doc/json/ajaxDone.json">
+	<input type="hidden" id="aduitStatus" name="aduitStatus" value="" />
+	<input type="hidden" id="instanceNodeGuid" name="instanceNodeGuid" value="" />
+	<header>
+		<div class="toolbar">
+			<a class="bar-button back-button"><i class="dwz-icon-arrow-left"></i></a>
+			<div class="header-title">代理商录入</div>
+
+		</div>
+	</header>
+
+	<section>
+
+		<div class="scroll-content dwz-scroll" id="InspectionRules">
+			<div class="scroll">
+				<div class="w-tabbar dwz-tabs">
+					<div class="tab-bar">
+						<a class="tab-item proje"><span>基本信息</span></a>
+						<a class="tab-item quoat"><span>开户信息</span></a>
+						<a class="tab-item price"><span>附加信息</span></a>
+						<a class="tab-item price"><span>审批信息</span></a>
+					</div>
+					<div class="tab-panel">
+						<div class="panel-item">
+							<div class="dwz-panel dwz-collapse">
+								<div class="panel-header">
+									<label class="panel-title blockquote">基本信息</label>
+									<a class="item-right"><i class="dwz-icon-arrow-up"></i></a>
+								</div>
+								<div class="panel-content">
+									<div class="form-content unitBox" id="REPLACEPROJECTINFO">
+
+										<div class="form-item">
+											<div class="item-content"><label>代理商编号:</label><input type="text"
+													name="dlsbh" explain="代理商编号" element-type="INPUT" id="QuotationId"
+													readOnly="readOnly" data-error="代理商编号不能为空"
+													value="{{vo.dlsbh}}" class="dwz-clipboard required"></div>
+										</div>
+										<div class="form-item">
+											<div class="item-content"><label>代理商公司名称:</label><input type="text"
+													name="dlsmc" explain="代理商名称" data-error="代理商公司名称不能为空" element-type="INPUT" id="" value="{{vo.dlsmc}}"
+													class="dwz-clipboard required"></div>
+										</div>
+
+										<!--  -->
+										<div class="form-item">
+											<div class="item-content"><label>联系人:</label><input type="text" name="lxr"
+													element-type="INPUT" id="QuotationName" explain="联系人" value="{{vo.lxr}}"
+													data-error="联系人不能为空" class="dwz-clipboard required">
+											</div>
+										</div>
+										<div class="form-item">
+											<div class="item-content"><label>联系电话:</label><input type="text" name="lxdh"
+													element-type="INPUT" id="" explain="联系电话" data-error="联系电话不能为空"
+													value="{{vo.lxdh}}" class="dwz-clipboard required"></div>
+										</div>
+										<div class="form-item">
+											<div class="item-content"><label>所属销售员:</label><input readOnly="readOnly"
+													type="text" name="ssxsy qian" element-type="INPUT" id="" value="测试1"
+													explain="所属销售员" class="dwz-clipboard required  prohibit"
+													data-error="所属销售员不能为空"></div>
+										</div>
+									  <div class="form-item">
+                                    <div class="item-content">
+                                        <label>省市区</label>
+                                        <input type="hidden" name="province">
+                                        <input type="hidden" name="city">
+                                        <input type="hidden" name="county">
+                                        <input type="hidden" isnotempty="True" paramname="项目所在地" name="ProvCityDist" id="ProvCityDist" value="">
+                                        <input type="text" value="{{vo.citys}}" name="citys" class="required" placeholder="省、市、区" data-error="请选择省市区" 
+                                         onclick="$.dialog.open({
+                                            url: 'tpl/helper/dialogSelectRegion.html?dwz_callback=biz.helpercopy.selectRegionRender',
+                                            data: {target:this, code: '',
+                                                callback: function(data) {
+            
+                                                    var form = this.parentsByTag('form').get(0);
+                                                    form.province.value = data.province;
+                                                    form.city.value = data.city;
+                                                    form.county.value = data.county;
+                                                    form.citys.value = data.names;
+                                                    form.ProvCityDist.value = data.paramVal;
+                                                    $.dialog.close();
+                                                }
+                                            },
+                                            pop: 'actionSheet'
+                                        })">
+                                       
+                                    </div>
+                                </div>
+										<div class="form-item">
+											<div class="item-content"><label>详细地址:</label><input type="text" name="dz"
+													element-type="INPUT" id="" explain="详细地址" value="{{vo.dz}}"
+													class="dwz-clipboard required" data-error="详细地址不能为空">
+											</div>
+										</div>
+										<!--  -->
+										<div class="form-item">
+											<div class="item-content"><label>授权区域:</label><input type="text" name="sqqy"
+													element-type="INPUT" id="" value="{{vo.sqqy}}" class="dwz-clipboard "></div>
+										</div>
+
+										<!-- 销售 -->
+
+										<div class="form-item">
+											<div class="item-content"><label>授权内容:</label>
+												<select name="sqnr" class="toggleSelectRef " explain="授权内容"
+													data-error="授权内容不能为空"
+													data-ref-box="#toggleSelectRef_test1|#toggleSelectRef_test2|"
+													data-ctr-show="true" data-ref-val="销售|安装|维保|安装+维保">
+													<!-- 设置类型 -->
+													<option value="{{vo.sqnr}}">{{vo.sqnr}}</option>
+													<option value="销售">销售</option>
+													<option value="安装1">安装</option>
+													<option value="维保">维保</option>
+													<option value="安装+维保">安装+维保</option>
+												</select>
+
+											</div>
+										</div>
+										<!-- 测试结束 -->
+										<div class="form-item" id="toggleSelectRef_test1">
+											<div class="item-content"><label>授权等级:</label>
+												<select name="sqdj" data-error="">
+													<option>A</option>
+													<option value="1">B</option>
+													<option value="2">C</option>
+													<option value="3">D</option>
+													<option value="4">E</option>
+													<option value="5">F</option>
+												</select>
+											</div>
+										</div>
+										<div class="form-item" id="toggleSelectRef_test2">
+											<div class="item-content">
+												<label>资质有效期到:</label>
+												<div class="form-item">
+													<div class="item-content">
+														<input type="text" name="zzyxqsjd"  value="{{vo.zzyxqsjd}}"
+															class=" dwz-calendar " style="width: 213px"
+															style="padding-right: 20px;" data-error="资质有效期不能为空" 
+															readonly />
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="form-item" id="toggleSelectRef_test2">
+											<div class="item-content"><label>资质等级:</label>
+												<select name="sqdj" data-error="">
+													<option>A</option>
+													<option value="1">B</option>
+													<option value="2">C</option>
+													<option value="3">D</option>
+													<option value="4">E</option>
+													<option value="5">F</option>
+												</select>
+											</div>
+										</div>
+
+
+										<div class="form-item">
+											<div class="item-content"><label>电子邮箱:</label><input type="text" name="dzyx"
+													element-type="INPUT" id="" explain="电子邮箱" data-error="电子邮箱不能为空"
+													value="{{vo.dzyx}}" class="dwz-clipboard  email "></div>
+										</div>
+										<div class="form-item">
+											<div class="item-content"><label>身份证号:</label><input type="text" name="sfzh"
+													element-type="INPUT" id="" value="{{vo.sfzh}}" class="dwz-clipboard"></div>
+										</div>
+
+										<!-- 销售 资质开始-->
+
+										<div class="form-item" class="isShow" id="toggleSelectRef_test1">
+											<div class="item-content"><label>是否签署激励协议</label>
+												<select name="sfjs" class="" data-error="是否签订不能为空"
+													style="pointer-events: none;">
+													<option value="0">是</option>
+													<option value="1">否</option>
+												</select>
+											</div>
+										</div>
+										<div class="form-item" id="toggleSelectRef_test1">
+											<div class="item-content"><label>激励协议台量:</label><input 
+													type="text" name="jlxytl" element-type="INPUT" id="" value="{{vo.jlxytl}}"
+													class="dwz-clipboard  prohibit" data-error="激励协议台量不能为空">
+											</div>
+										</div>
+										<!-- 销售资质结束 -->
+										<div class="form-item">
+											<div class="item-content"><label>所属区域:</label>
+												<input readOnly="readOnly" 
+													type="text" name="ssqy qian" element-type="INPUT"  value="{{vo.ssqy}}"
+													class="dwz-clipboard  prohibit" data-error="所属区域不能为空"></div>
+										</div>
+										<div class="form-item">
+											<div class="item-content"><label>所属分公司:</label>
+												  <input readOnly="readOnly"
+													type="text" name="ssfgs qian" element-type="INPUT" id=""
+													value="{{vo.ssfgs}}" explain="联系人" class="dwz-clipboard  prohibit"
+													data-error="所属分公司不能为空"></div>
+										</div>
+
+										<!-- 保证金开始 -->
+										<div class="form-item" id="toggleSelectRef_test1">
+											<div class="item-content"><label>保证金到账时间:</label>
+												<div class="form-item" class="s ">
+													<div class="item-content">
+														<input type="text" name="bzjdzrq" value="{{vo.bzjdzrq}}"
+															class=" dwz-calendar  " explain="保证金到账时间"
+															data-error="保证金到账时间不能为空" readonly />
+													</div>
+												</div>
+											</div>
+
+										</div>
+										<div class="form-item" id="toggleSelectRef_test1">
+											<div class="item-content"><label>是否生效:</label> <select name="sfsx"
+													data-error="" class="" data-error="是否生效不能为空">
+													<option>是</option>
+													<option value="1">否</option>
+												</select>
+											</div>
+										</div>
+										<!-- 保证金结束 -->
+										<div class="form-item">
+											<div class="item-content"><label>所在区域:</label> <select name="szqy"
+													data-error="" class="" data-error="所在区域不能为空">
+													<option value="中国">国内</option>
+													<option value="外国">国外</option>
+												</select>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- 开户信息 -->
+						<div class="panel-item">
+							<div class="dwz-panel dwz-collapse">
+								<div class="panel-header">
+									<label class="panel-title blockquote">开户信息</label>
+									<a class="item-right"><i class="dwz-icon-arrow-up"></i></a>
+								</div>
+								<div class="panel-content">
+									<div class="form-content unitBox" id="REPLACEPROJECTINFO">
+
+
+										<div class="form-item">
+											<div class="item-content"><label>统一社会信用代码:</label><input type="text"
+													name="tyshxydm" element-type="INPUT"  value="{{vo.tyshxydm}}"
+													class="dwz-clipboard"></div>
+										</div>
+
+										<div class="form-item">
+											<div class="item-content"><label>法人代表:</label><input type="text" name="frdb"
+													element-type="INPUT"  value="{{vo.frdb}}"
+													class="dwz-clipboard"></div>
+										</div>
+										<div class="form-item">
+											<div class="item-content"><label>银行账号:</label><input type="text" name="yhzh"
+													element-type="INPUT" id="Quot_CreateDate" value="{{vo.yhzh}}" explain="银行账号"
+													class="dwz-clipboard " data-error="银行账号不能为空"></div>
+										</div>
+										<div class="form-item">
+											<div class="item-content"><label>开户银行:</label><input type="text" name="khyh"
+												element-type="INPUT" id="Quot_CreateDate" value="{{vo.khyh}}" explain="开户银行"
+													class="dwz-clipboard " data-error="开户银行不能为空"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- 附加信息 -->
+						<div class="panel-item">
+							<div class="dwz-panel dwz-collapse">
+								<div class="panel-header">
+									<label class="panel-title blockquote">附加信息</label>
+									<a class="item-right"><i class="dwz-icon-arrow-up"></i></a>
+								</div>
+								<div class="panel-content">
+									<div class="form-content unitBox" id="REPLACEPROJECTINFO">
+										<div class="form-item">
+										</div>
+
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- 审批信息 -->
+						<div class="panel-item">
+							<!-- <article>项目备注</article> -->
+							<div class="form-content unitBox">
+								<div class="form-item">
+									<label >备注</label>
+									<div class="item-content">
+										<textarea class="textarea" explain="备注" id="Remark" name="remark1" value=""
+											rows="4" placeholder="请输入备注" maxlength="200"
+											data-error="请输入备注">{{vo.remark1}}</textarea>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+			</div>
+	</section>
+	<div class="form-bar pane">
+		<button class="button primary" type="button"
+			onclick="return biz.agentList.OperationButtonOut('{{vo.dlsbh}}','{{vo.InstanceNodeGuid}}')">操作</button>
+	</div>
+</form>

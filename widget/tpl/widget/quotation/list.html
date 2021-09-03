@@ -1,0 +1,72 @@
+<form class="dwz-list-form page-wrap">
+    <input type="hidden" name="pageIndex" value="1">
+    <input type="hidden" name="pageSize" value="10">
+    <header>
+        <div class="toolbar">
+            <a class="bar-button back-button"><i class="dwz-icon-arrow-left"></i></a>
+            <div class="header-title">报价查询</div>
+            <a class="bar-button add-button" onclick="biz.quotationList.EditQuotation(event)"><i class="dwz-icon-arrow-add"></i></a>
+        </div>
+        <div class="toolbar">
+			<div class="bar search-bar">
+				<label class="item-input filter-keywords">
+					<button class="icon icon-search" type="button"></button>
+					<input type="search" class="dwz-disable-autofocus" name="keywords" value="" placeholder="">
+				</label>
+			</div>
+		</div>
+    </header>
+
+    <section>
+
+        <div class="scroll-content dwz-list">
+            <div class="scroll">
+                <div class="pullDown">
+                    <span class="pullDownIcon">&nbsp;</span>
+                    <span class="pullDownLabel" data-flip="松开刷新">下拉刷新</span>
+                </div>
+                <div class="empty_box">
+                    <div class="empty-img">
+                        <img src="image/browse-empty-bg.svg">
+                    </div>
+                    <p class="txt-info is-center">暂时还没有数据哦~</p>
+                </div>
+                <ul class="list pic-list dwz-list-box">
+
+                </ul>
+
+                <div class="pullUp">
+                    <span class="pullUpIcon">&nbsp;</span><span class="pullUpLabel" data-loading="加载中...">加载更多</span>
+                </div>
+
+            </div>
+            <a href="javascript:void(0)" class="top-btn hide">回顶部</a>
+        </div>
+
+    </section>
+</form>
+<script id="tpl_list" type="text/html">
+    {{each list as item}}
+    <li class="item dwz-open-right dwz-ctl-hover" data-id="{{item.QuotationId}}" onclick="biz.quotationList.EditQuotation(event,'{{item}}')">
+        <div class="item-content">
+        	<div class="flex-wrap grid-col-1" style="justify-content: space-between">
+        		<p class="item item-tinfo1">{{item.QuotationId}}</p>
+        		<i class="dwz-btn-flex-right menuBtn Expandbutton" onclick="biz.quotationList.Selectbutton(event,this,'{{item}}');"><img class="Expandbutton" src="../../../image/icon/quotation/more.svg" /></i>
+        	</div>
+        	
+        	<div class="flex-wrap grid-col-2">
+        		<p class="item item-tinfo1">报价单编号</p>
+        		<p class="item item-tinfo2">{{item.QuotationId}}</p>
+        	</div>
+        	<div class="flex-wrap grid-col-2">
+        		<p class="item item-tinfo1">方案名称</p>
+        		<p class="item item-tinfo2">{{item.QuotationName}}</p>
+        	</div>
+        	<div class="flex-wrap grid-col-2">
+        		<p class="item item-tinfo1">创建时间</p>
+        		<p class="item item-tinfo2">{{item.CreateDate}}</p>
+        	</div>
+        </div>
+    </li>
+    {{/each}}
+</script>

@@ -1,0 +1,14 @@
+SCC = This is a Source Code Control file.
+
+[CRM.sln]
+SCC_Aux_Path = 20.20.20.98:8877:CRM
+SCC_Project_Name = $/Projects/沃克斯/CRM-Volks
+
+[CRM.Core.csproj]
+SCC_Aux_Path = 20.20.20.98:8877:CRM
+SCC_Project_Name = $/Projects/沃克斯/CRM-Volks/CRM.Core
+
+[CRM.Web.csproj]
+SCC_Aux_Path = 20.20.20.98:8877:CRM
+SCC_Project_Name = $/Projects/沃克斯/CRM-Volks/CRM.Web
+

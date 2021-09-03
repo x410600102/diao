@@ -1,0 +1,257 @@
+// 
+
+.pos-abs-tr {
+	position: absolute !important;
+	top: 0px;
+	right: 0px;
+}
+
+// 九宫格
+.grid-col-2,
+.grid-col-3,
+.grid-col-4,
+.grid-col-5 {
+	position: relative;
+	overflow: hidden;
+	text-align: center;
+
+	.item {
+		.boxLine(0 1px 1px 0);
+		&:before {
+			transform: scale(0.495, 0.5); // 处理border兼容问题
+		}
+		display: block;
+		position: relative;
+		float: left;
+		padding: 10px 0px;
+		box-sizing: border-box;
+		color: @gridColTxtColor;
+		&.hover {
+			color: @gridColTxtColorHover;
+		}
+		.item-icon {
+			.flex-wrap-center;
+			width: 40px;
+			height: 40px;
+			margin: 0 auto;
+			font-size: 30px;
+			img {
+				width: 75%;
+				height: 75%;
+			}
+		}
+		.item-label {
+			.txt-line1;
+			text-align: center;
+			font-size: @l4;
+		}
+	}
+
+	&.no-line {
+		&:before,
+		.item:before {
+			border: none;
+		}
+	}
+}
+.grid-col-2 {
+	.item:nth-child(2n):before {
+		border-right-width: 0;
+	}
+	.item {
+		width: 50%;
+	}
+    .dwz-ctl-flwex {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        font-weight: 600;
+    }
+    .dwz-ctl-ladder {
+        span {
+            float: left;
+            line-height: 30px;
+            padding-left: 5px;
+        }
+        input {
+            float: right;
+            width: 60px;
+            height: 30px;
+            margin-right: 5px;
+            text-align: center;
+            border: 1px solid #2467ff;
+            border-radius: 5px;
+        }
+    }
+}
+.grid-col-3 {
+	.item:nth-child(3n):before {
+		border-right-width: 0;
+	}
+	.item {
+		width: 33.33333333%;
+	}
+}
+.grid-col-4 {
+	.item:nth-child(4n):before {
+		border-right-width: 0;
+	}
+	.item {
+		width: 25%;
+	}
+    p.item-tinfo1,p.item-tinfo2,p.item-tinfo3,p.item-tinfo4 {
+        white-space: nowrap;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        padding: 10px 5px;
+    }
+    p.item-tinfo1 {
+        padding: 10px 5px;
+    }
+}
+.grid-col-5 {
+	.item:nth-child(5n):before {
+		border-right-width: 0;
+	}
+	.item {
+		width: 20%;
+	}
+}
+
+// 滚动文字
+.dwz-marquee-txt,
+.dwz-marquee-list {
+	overflow: hidden;
+}
+
+// 适配横竖屏布局
+.layout-row {
+	display: flex;
+	flex-direction: column;
+
+	.col-1,
+	.col-2,
+	.col-3,
+	.col-4,
+	.col-5,
+	.col-6,
+	.col-7,
+	.col-8,
+	.col-9,
+	.col-10,
+	.col-11,
+	.col-12 {
+		position: relative;
+	}
+}
+
+// flex 流式布局，根据item宽度适配
+.flex-flow {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+
+	.col-1,
+	.col-2,
+	.col-3,
+	.col-4,
+	.col-5,
+	.col-6,
+	.col-7,
+	.col-8,
+	.col-9,
+	.col-10,
+	.col-11,
+	.col-12 {
+		position: relative;
+		flex-shrink: 0;
+		display: flex;
+	}
+
+	.col-12,
+	.col-11 {
+		width: 100%;
+	}
+	.col-10,
+	.col-9 {
+		width: 83.33333333%;
+	}
+	.col-8,
+	.col-7 {
+		width: 66.66666667%;
+	}
+	.col-6,
+	.col-5 {
+		width: 50%;
+	}
+	.col-4,
+	.col-3 {
+		width: 33.33333333%;
+	}
+	.col-2,
+	.col-1 {
+		width: 16.66666667%;
+	}
+}
+
+// 行列布局
+.row {
+	.flex-wrap;
+	width: 100%;
+	.col {
+		display: block;
+		.flex-1;
+	}
+	.col-1 {
+		width: 20%;
+	}
+	.col-2 {
+		width: 40%;
+	}
+	.col-3 {
+		width: 60%;
+	}
+	.col-4 {
+		width: 80%;
+	}
+	.col-5 {
+		width: 100%;
+	}
+}
+
+// 滚动表格
+ul.grid {
+	.tr {
+		color: @descColor;
+		font-size: @l4;
+		.flex-wrap;
+
+		.td {
+			line-height: 30px;
+			.flex-wrap;
+
+			&.right {
+				justify-content: flex-end;
+				align-items: flex-end;
+			}
+			&.w30 {
+				width: 30px;
+			}
+			&.w40 {
+				width: 40px;
+			}
+			&.w60 {
+				width: 60px;
+			}
+			&.w80 {
+				width: 80px;
+			}
+			&.w100 {
+				width: 100px;
+			}
+			&.w120 {
+				width: 120px;
+			}
+		}
+	}
+}

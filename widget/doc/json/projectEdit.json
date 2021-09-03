@@ -1,0 +1,154 @@
+{
+    "IsSuccess": true,
+    "Message": "",
+    "Entity": {
+        "dlsbh":"V20210300333",
+        "BelongArea":"中区",
+        "BelongBranchCompany":"安徽分公司",
+        "ProjectBranchCompany":"2",
+        "Creator":"1234",
+        "SalerInCharge":"3",
+        "ProjectName":"2",
+        "ProjectTypeInfo":"V20210300333",
+        "CustomName":"23",
+        "CustomCate":"we",
+        "EleCount":"34",
+        "ProjectStage":"",
+        "ForecastSignTime":"",
+        "OEM":"5",
+        "SignCount":"5",
+        "Competitor1":"4",
+        "ProjectCountry":"3",
+        "ProvCityDist":"3",
+        "Address":"1",
+        "Ratio":"100%",
+        "Remark":"1",
+        "total": 100,
+        "dict": [{
+                "id": 100,
+                "code": "VE(V300)",
+                "value": "100"
+            },
+            {
+                "id": 99,
+                "code": "VE(V300)",
+                "value": "100"
+            },
+            {
+                "id": 98,
+                "code": "VE(V600)",
+                "value": "100"
+            },
+            {
+                "id": 97,
+                "code": "VEW(V100/V200)",
+                "value": "100"
+            },
+            {
+                "id": 96,
+                "code": "VEW(V300)",
+                "value": "100"
+            },
+            {
+                "id": 95,
+                "code": "VEW(V600)",
+                "value": "100"
+            },
+            {
+                "id": 94,
+                "code": "VB(V100/V200)",
+                "value": "100"
+            },
+            {
+                "id": 93,
+                "code": "VB(V600)",
+                "value": "100"
+            },
+            {
+                "id": 92,
+                "code": "VBW(V100/V200)",
+                "value": "100"
+            },
+            {
+                "id": 91,
+                "code": "VBW(V600)",
+                "value": ""
+            },
+            {
+                "id": 90,
+                "code": "VG(V100)",
+                "value": ""
+            },
+            {
+                "id": 89,
+                "code": "VG(V200)",
+                "value": ""
+            },
+            {
+                "id": 88,
+                "code": "VG(V300)",
+                "value": ""
+            },
+            {
+                "id": 87,
+                "code": "VGW(V100)",
+                "value": ""
+            },
+            {
+                "id": 86,
+                "code": "VGW(V200)",
+                "value": ""
+            },
+            {
+                "id": 85,
+                "code": "VGW(V300)",
+                "value": ""
+            },
+            {
+                "id": 84,
+                "code": "VH",
+                "value": ""
+            },
+            {
+                "id": 83,
+                "code": "VEB",
+                "value": ""
+            },
+            {
+                "id": 82,
+                "code": "VHW",
+                "value": ""
+            },
+            {
+                "id": 81,
+                "code": "VHC",
+                "value": ""
+            },
+            {
+                "id": 80,
+                "code": "VW",
+                "value": ""
+            },
+            {
+                "id": 79,
+                "code": "VF",
+                "value": ""
+            },
+            {
+                "id": 78,
+                "code": "VR",
+                "value": ""
+            },
+            {
+                "id": 77,
+                "code": "VE(V350)",
+                "value": ""
+            },
+            {
+                "id": 76,
+                "code": "VEWW",
+                "value": ""
+            }
+        ]
+    }
+}

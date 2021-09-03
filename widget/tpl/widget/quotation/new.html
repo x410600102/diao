@@ -1,0 +1,222 @@
+<style>
+	.QuotCodeList{
+		flex: 1;
+	}
+	.QuotCodeList .item:before{
+		border: none;
+	}
+	.QuotCodeList .dwz-scroll-x{
+		display: flex;overflow-x: scroll
+	}
+	.QuotCodeList .layout-row{
+		text-align: left;width: auto;box-shadow: 1px 0px 5px #e4e4e4;padding: 0px 5px;
+	}
+</style>
+<form class="page-wrap dwz-list-form" method="post" action="./doc/json/ajaxDone.json">
+
+	<header>
+		<div class="toolbar">
+			<a class="bar-button back-button"><i class="dwz-icon-arrow-left"></i></a>
+			<div class="header-title"></div>
+
+		</div>
+	</header>
+
+	<section>
+
+		<div class="scroll-content dwz-scroll">
+			<div class="scroll">
+
+				<div class="w-tabbar dwz-tabs">
+					<div class="tab-bar">
+						<a class="tab-item proje"><span>项目基本信息</span></a>
+						<a class="tab-item quoat"><span>报价单信息</span></a>
+						<a class="tab-item price"><span>编辑价格审批表</span></a>
+					</div>
+					<div class="tab-panel">
+						<div class="panel-item">
+							<div class="dwz-panel dwz-collapse">
+								<div class="panel-header">
+									<label class="panel-title blockquote">项目信息</label>
+									<a class="item-right"><i class="dwz-icon-arrow-up"></i></a>
+								</div>
+								<div class="panel-content">
+									<div class="form-content unitBox" id="PROJECTINFO">
+
+									</div>
+								</div>
+							</div>
+							<div class="dwz-panel dwz-collapse">
+								<div class="panel-header">
+									<label class="panel-title blockquote">设备合同信息</label>
+									<a class="item-right"><i class="dwz-icon-arrow-up"></i></a>
+								</div>
+								<!-- 数据后台生成  -->
+								<div class="panel-content">
+									<div class="form-content unitBox" id="EQUIPMENTCONTRACTINFO">
+
+									</div>
+								</div>
+							</div>
+							<div class="dwz-panel dwz-collapse">
+								<div class="panel-header">
+									<label class="panel-title blockquote">安装合同信息</label>
+									<a class="item-right"><i class="dwz-icon-arrow-up"></i></a>
+								</div>
+								<div class="panel-content">
+									<div class="form-content unitBox" id="INSTALLCONTRACTINFO">
+
+									</div>
+								</div>
+							</div>
+							<div class="dwz-panel dwz-collapse">
+								<div class="panel-header">
+									<label class="panel-title blockquote">替换项目信息</label>
+									<a class="item-right"><i class="dwz-icon-arrow-up"></i></a>
+								</div>
+								<div class="panel-content">
+									<div class="form-content unitBox" id="REPLACEPROJECTINFO">
+
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="panel-item">
+							<div class="dwz-panel dwz-collapse">
+								<div class="panel-header">
+									<label class="panel-title blockquote">报价单信息</label>
+									<a class="item-right"><i class="dwz-icon-arrow-up"></i></a>
+								</div>
+								<div class="panel-content">
+									<div class="form-content unitBox" id="REPLACEPROJECTINFO">
+										<div class="form-item">
+											<div class="item-content"><label>报价单编号：</label><input disabled="disabled" type="text" name="QuotationId" element-type="INPUT" id="QuotationId" value="{{vo.QuotationId}}" class="dwz-clipboard"></div>
+										</div>
+										<div class="form-item">
+											<div class="item-content"><label>方案名称：</label><input type="text" name="QuotationName" element-type="INPUT" id="QuotationName" value="" class="dwz-clipboard"></div>
+										</div>
+										<div class="form-item">
+											<div class="item-content"><label>报价单编号：</label><input disabled="disabled" type="text" name="Quot_CreateDate" element-type="INPUT" id="Quot_CreateDate" value="" class="dwz-clipboard"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="dwz-panel dwz-collapse">
+								<div class="list pic-list dwz-list-box" data-open-right="1">
+									<li class="item dwz-open-right dwz-ctl-hover">
+										<div class="item-content">
+								        	<div class="flex-wrap grid-col-1" style="justify-content: space-between">
+								        		<p class="item item-tinfo1">规格信息</p>
+								        		<i class="dwz-btn-flex-right menuBtn Expandbutton" onclick="biz.quotationList.Selectbutton(event,this,'{&quot;QuotationId&quot;:&quot;VKS20210408049&quot;,&quot;QuotationName&quot;:&quot;1111&quot;,&quot;ProjectType&quot;:&quot;新梯项目&quot;,&quot;InstanceNodeGuid&quot;:&quot;7e707641-b4d6-4206-8445-27ff34724656&quot;,&quot;InstanceNodeName&quot;:&quot;编辑价格审批表&quot;,&quot;QC&quot;:&quot;流程测试&quot;,&quot;OrgName&quot;:&quot;安徽分公司&quot;,&quot;CreateDate&quot;:&quot;2021/4/2&quot;,&quot;InstanceCreateDate&quot;:&quot;2021/4/7&quot;,&quot;InstanceStatus&quot;:&quot;Whit&quot;,&quot;InstanceNodeStatusCN&quot;:&quot;新建&quot;,&quot;CUserName&quot;:&quot;测试1&quot;,&quot;TUserName&quot;:&quot;测试1&quot;,&quot;Version&quot;:&quot;1&quot;}');"><img class="Expandbutton" src="../../../image/icon/quotation/more.svg"></i>
+								        	</div>
+								        	<div class="flex-wrap">
+								        		<div class="item item-tinfo1 layout-row" style="text-align: left;box-shadow: 1px 0px 5px #e4e4e4;z-index: 1;">
+								        			<div class="col-3">梯号：</div>
+								        			<div class="col-3">梯形：</div>
+								        			<div class="col-3">载重：</div>
+								        			<div class="col-3">速度：</div>
+								        			<div class="col-3">层站/角度:</div>
+								        			<div class="col-3">交货期：</div>
+								        			<div class="col-3">是否非标：</div>
+								        			<div class="col-3">土建编号：</div>
+								        			<div class="col-3">土建状态：</div>
+								        			<div class="col-3">非标状态：</div>
+								        			<div class="col-3">处理状态：</div>
+								        			<div class="col-3">操作：</div>
+								        		</div>
+								        		<div class="item item-tinfo1 layout-row QuotCodeList">
+								        			<div class="quotList" style="display: flex;overflow-x: scroll;">
+														<div class="item-tinfo1 layout-row">
+										        			<div class="col-3">L001-001</div>
+										        			<div class="col-3">VE(V600)</div>
+										        			<div class="col-3">1150</div>
+										        			<div class="col-3">1.0</div>
+										        			<div class="col-3">9/9/9</div>
+										        			<div class="col-3">27</div>
+										        			<div class="col-3">否</div>
+										        			<div class="col-3">T21043772A</div>
+										        			<div class="col-3">结束状态</div>
+										        			<div class="col-3">标准</div>
+										        			<div class="col-3">已处理</div>
+										        			<div class="col-3 menuBtn" onclick="biz.quotationList.EditQuoBtn(event,this,'')"><img class="Expandbutton" src="../../../image/icon/quotation/more.svg"></div>
+										        		</div>
+													</div>
+								        		</div>
+								        		
+								        	</div>
+								        </div>
+									</li>
+								</div>
+							</div>
+						</div>
+						<div class="panel-item">
+							<div class="form-content unitBox">
+								<div class="form-item">
+									<div class="item-content"><label>项目合同价：</label><input disabled="disabled" type="text" name="TotalContractPrice" element-type="INPUT" id="TotalContractPrice" value="" class="dwz-clipboard"></div>
+								</div>
+								<div class="form-item">
+									<div class="item-content"><label>项目结算价：</label><input disabled="disabled" type="text" name="TotalActualPrice" element-type="INPUT" id="TotalActualPrice" value="" class="dwz-clipboard"></div>
+								</div>
+								<div class="form-item">
+									<div class="item-content"><label>项目服务费：</label><input disabled="disabled" type="text" name="TotalServicePrice" element-type="INPUT" id="TotalServicePrice" value="" class="dwz-clipboard"></div>
+								</div>
+								<div class="form-item">
+									<div class="item-content"><label>项目服务费比例：</label><input disabled="disabled" type="text" name="TotalServicePriceRatio" element-type="INPUT" id="TotalServicePriceRatio" value="" class="dwz-clipboard"></div>
+								</div>
+							</div>
+							<div class="dwz-panel dwz-collapse">
+								<div class="panel-header">
+									<label class="panel-title blockquote">设备价审信息</label>
+									<a class="item-right"><i class="dwz-icon-arrow-up"></i></a>
+								</div>
+								<div class="panel-content">
+									
+								</div>
+							</div>
+							<div class="dwz-panel dwz-collapse">
+								<div class="panel-header">
+									<label class="panel-title blockquote">安装价审信息</label>
+									<a class="item-right"><i class="dwz-icon-arrow-up"></i></a>
+								</div>
+								<div class="panel-content">
+									
+								</div>
+							</div>
+							<div class="dwz-panel dwz-collapse">
+								<div class="panel-header">
+									<label class="panel-title blockquote">调试费价审信息</label>
+									<a class="item-right"><i class="dwz-icon-arrow-up"></i></a>
+								</div>
+								<div class="panel-content">
+									
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</section>
+	<div class="form-bar pane">
+		<button class="button primary" type="button" onclick="return biz.quotationList.OperationButtonOut('{{vo.QuotationId}}','{{vo.InstanceNodeGuid}}')">操作</button>
+	</div>
+</form>
+<script id="tpl_list" type="text/html">
+	{{each list as item}}
+	    <div class="item-tinfo1 layout-row">
+			<div class="col-3">L001-001</div>
+			<div class="col-3">VE(V600)</div>
+			<div class="col-3">1150</div>
+			<div class="col-3">1.0</div>
+			<div class="col-3">9/9/9</div>
+			<div class="col-3">27</div>
+			<div class="col-3">否</div>
+			<div class="col-3">T21043772A</div>
+			<div class="col-3">结束状态</div>
+			<div class="col-3">标准</div>
+			<div class="col-3">已处理</div>
+			<div class="col-3 menuBtn" onclick="biz.quotationList.EditQuoBtn(event,this,'')"><img class="Expandbutton" src="../../../image/icon/quotation/more.svg"></div>
+		</div>
+	{{/each}}
+</script>
